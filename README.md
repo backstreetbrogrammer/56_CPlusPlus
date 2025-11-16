@@ -36,13 +36,13 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 - Install the exe
 - Launch VS Code
 - Extensions: type "C/C++" in the search and install:
-  - C/C++: Microsoft
-  - C/C++ Extension Pack: Microsoft
-  - C/C++ Themes: Microsoft
-- Extensions: type "franneck94" in the search and install:
-  - Coding Tools Extension Pack
-  - C/C++ Extension Pack
-  - C/C++ Runner
+    - C/C++: Microsoft
+    - C/C++ Extension Pack: Microsoft
+    - C/C++ Themes: Microsoft
+- Extensions: type `"franneck94"` in the search and install:
+    - Coding Tools Extension Pack
+    - C/C++ Extension Pack
+    - C/C++ Runner
 - Restart VS Code
 
 ### Setting the workspace
@@ -50,9 +50,9 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 - Create a folder in Windows
 - Open Folder from VS Code
 - Create new projects folder inside the parent folder
-- These folders will work as separate projects containing `main.cpp` 
+- These folders will work as separate projects containing `main.cpp`
 
-Once the source code is written, click on the `.cpp` file and open `View -> Command Palette` or `Ctrl + Shift + P`. 
+Once the source code is written, click on the `.cpp` file and open `View -> Command Palette` or `Ctrl + Shift + P`.
 
 - Select `C/C++: Edit Configurations (UI)`
 - Compiler Path: chose `g++` and not `gcc`
@@ -79,23 +79,33 @@ Select the `.cpp` file and click on `Terminal -> Run Build Task` or `Ctrl + Shif
 
 This will create the `.exe` file.
 
-Right click the `.exe` file -> `Open in Integrated Terminal`.
+Right-click the `.exe` file -> `Open in Integrated Terminal`.
 
 In the terminal, type: `.\main.exe` to run the program.
 
 #### Create another project
 
-Click on the previous project and press `Esc` -> now we can create new folder as a new project inside the same 
+Click on the previous project and press `Esc` -> now we can create new folder as a new project inside the same
 parent folder.
 
-Now, when we create new `.cpp` files, click on `Terminal -> Run Build Task` or `Ctrl + Shift + B`, same as above for 
-build and run section.
+Now, when we create new `.cpp` files, click on `Terminal -> Run Build Task` or `Ctrl + Shift + B`, same as above for
+the build and run section.
 
 #### Debugger
 
+- Click on one `main.cpp` file
+- Click on `Run -> Add Configuration`
+- Select `C++ (GDB/LLDB)`
+- Select `g++.exe build and debug active file`
 
+This will create `launch.json` file inside `.vscode` folder.
 
+In `"configurations"`, edit:
 
+- "program": `"${fileDirname}\\${fileBasenameNoExtension}.exe"`
+- "cwd": `"${fileDirname}"`
+
+Now, we can set breakpoints and click on `Run -> Start Debugging` or `F5` to debug the program.
 
 
 
