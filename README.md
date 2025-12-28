@@ -242,11 +242,20 @@ project(CppProjectTemplate VERSION 1.0.0 LANGUAGES C CXX)
 add_executable(Executable main.cc)
 ```
 
-- follow the steps given as above 
+- follow the steps given as above
 
-Alternatively, we can use the CMake extension to build the project:
+Alternatively, we can use the `CMake` extension to build the project:
 
-- Chose the Kit in the bottom bar (GCC 11.4.0 for WSL)
+- Chose the Kit in the bottom bar (`GCC 11.4.0` for WSL)
+
+As soon as we chose the `Kit`, the `CMake` extension will automatically create a `build` folder and run the
+configuration step.
+
+Other steps:
+
+- Click on the `CMake: [Debug]` in the bottom bar to choose the build type => for dev, we will use `Debug`
+- Click on the `CMake: [Build]` in the bottom bar to build the project
+- Click on the `CMake: [Run]` in the bottom bar to run the project
 
 **Generators**
 
@@ -263,4 +272,30 @@ cmake .. -G "Unix Makefiles" # Option 2
 ```
 
 **Basic Project Structure**
+
+```
+C:\Users\rishi\Downloads\BuildWithTech\56_CPlusPlus\02_BasicProject
+```
+
+We can create a `C++` project on Windows.
+
+When done with the code, we can build and run it on WSL.
+
+We can use separate target for cmake commands:
+
+```cmake --build . --target <target_name>```
+
+For example, we can create a target for Library:
+
+```cmake
+cmake --build . --target Library
+```
+
+Or, for Executable:
+
+```cmake
+cmake --build . --target Executable
+```
+
+**Intermediate Project Structure**
 
