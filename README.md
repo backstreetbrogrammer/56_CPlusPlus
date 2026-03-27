@@ -8,7 +8,8 @@
     - [Install C++ compiler]()
     - [Install VS Code]()
     - [Setting the workspace]()
-2. [Modern CMake]()
+2. [Make and Makefiles]()
+3. [Modern CMake]()
 
 ---
 
@@ -148,11 +149,86 @@ sudo apt-get install curl zip unzip tar
 sudo apt-get install graphviz
 ```
 
+To run any program or `cd` to any folder in `Windows` from `Ubuntu`, use the following directory structure:
+
+```
+cd /mnt/c/Users/~/ApacheKafka
+
+# run with partition = 0 (args[0]) 
+java -cp ./target/ApacheKafka-1.0-SNAPSHOT-jar-with-dependencies.jar -Xms128m -Xmx1024m com.backstreetbrogrammer.producer.KafkaProducerDemo 0
+```
+
 ---
 
-## Chapter 02. Modern CMake
+## Chapter 02. Make and Makefiles
 
-[Github Repository](https://github.com/franneck94/UdemyCmake)
+[Makefile Github Repository](https://github.com/franneck94/UdemyMakefile)
+
+- Open a new Folder in VS Code
+- Create a simple `main.cpp`
+
+On Terminal or cmd, we can run:
+
+```
+$ g++.exe .\main.cc -o .\main
+$ .\main.exe
+Hello, World!
+```
+
+OR, we can just type this in `Makefile`:
+
+```
+# TARGETS
+
+build: 
+	g++ main.cc -o main 
+```
+
+And run on terminal: `make`.
+
+It will create `main.exe`.
+
+- Adding another target:
+
+```
+# TARGETS
+
+build: 
+	g++ main.cc -o main 
+
+execute:
+	./main
+```
+
+On terminal, if we just type `make`, always the first target will be run from top: `make build`
+
+To run `execute` target, type: `make execute`.
+
+We can have **multiple** commands in a target.
+
+```
+# TARGETS
+# target: prerequisites
+# 	commands
+
+build: 
+	g++ main.cc -c main.o 
+	g++ main.o -o main 
+
+execute:
+	./main
+
+clean:
+	rm -rf *.o main
+```
+
+
+
+---
+
+## Chapter 03. Modern CMake
+
+[CMake Github Repository](https://github.com/franneck94/UdemyCmake)
 
 [VSCode Shortcuts](https://github.com/franneck94/VSCodeGuide/blob/master/usefulShortcuts.md)
 
