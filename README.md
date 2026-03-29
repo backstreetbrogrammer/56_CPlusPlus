@@ -222,7 +222,36 @@ clean:
 	rm -rf *.o main
 ```
 
+**Basic Structure**
 
+Suppose we have more than source files in the same folder.
+
+Our Makefile can be:
+
+```
+# TARGETS
+# target: prerequisites
+# 	commands
+
+build: main.o my_lib.o
+	g++ main.o my_lib.o -o main
+
+main.o:
+	g++ main.cc -c
+
+my_lib.o:
+	g++ my_lib.cc -c
+
+execute:
+	./main
+
+clean:
+	rm -rf *.o main
+```
+
+As seen above, Makefile is used to make files. 
+
+We are explicitly specifying the prerequisite dependencies and the commands to build the project.
 
 ---
 
