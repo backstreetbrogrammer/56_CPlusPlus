@@ -4,12 +4,18 @@
 
 ## Table of Contents
 
-1. [Installation and Setup]()
-    - [Install C++ compiler]()
-    - [Install VS Code]()
-    - [Setting the workspace]()
-2. [Make and Makefiles]()
-3. [Modern CMake]()
+1. [Installation and Setup](https://github.com/backstreetbrogrammer/56_CPlusPlus?tab=readme-ov-file#chapter-01-installation-and-setup)
+    - [Install C++ compiler](https://github.com/backstreetbrogrammer/56_CPlusPlus?tab=readme-ov-file#install-c-compiler)
+    - [Install VS Code](https://github.com/backstreetbrogrammer/56_CPlusPlus?tab=readme-ov-file#install-vs-code)
+    - [Setting the workspace](https://github.com/backstreetbrogrammer/56_CPlusPlus?tab=readme-ov-file#setting-the-workspace)
+    - [Install WSL2 on Windows](https://github.com/backstreetbrogrammer/56_CPlusPlus?tab=readme-ov-file#install-wsl2-on-windows)
+2. [Make and Makefiles](https://github.com/backstreetbrogrammer/56_CPlusPlus?tab=readme-ov-file#chapter-02-make-and-makefiles)
+    - [Basic Structure]()
+    - [Variables]()
+    - [Wild cards]()
+3. [Modern CMake](https://github.com/backstreetbrogrammer/56_CPlusPlus?tab=readme-ov-file#chapter-03-modern-cmake)
+    - [VS Code with CMake Extension](https://github.com/backstreetbrogrammer/56_CPlusPlus?tab=readme-ov-file#vs-code-with-cmake-extension)
+    - [First Project with CMake](https://github.com/backstreetbrogrammer/56_CPlusPlus?tab=readme-ov-file#first-project-with-cmake)
 
 ---
 
@@ -222,7 +228,7 @@ clean:
 	rm -rf *.o main
 ```
 
-**Basic Structure**
+### Basic Structure
 
 Suppose we have more than source files in the same folder.
 
@@ -249,11 +255,11 @@ clean:
 	rm -rf *.o main
 ```
 
-As seen above, `Makefile` is used to make **files**. 
+As seen above, `Makefile` is used to make **files**.
 
 We are explicitly specifying the prerequisite dependencies and the commands to build the project.
 
-**Variables**
+### Variables
 
 We can declare variables in `Makefile` to avoid repetition of code and make it more maintainable.
 
@@ -307,7 +313,7 @@ clean:
 
 ```
 
-**Wild cards**
+### Wild cards
 
 We can use wild cards to avoid writing the same code again and again for each source file.
 
